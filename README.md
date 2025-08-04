@@ -3,7 +3,7 @@
 Industrial Smart Maintenance Cockpit  
 Machine monitoring, maintenance planning, and production optimization for Industry 4.0
 
-![Wolf Machines Logo](public/favicon.ico)
+![Wolf Machines Logo](favicon.ico)
 
 Wolf Machines is an industrial cockpit for smart machine maintenance. It provides comprehensive insights into machine status, errors, power consumption, and production quality — all in real-time, directly in your browser.
 
