@@ -95,10 +95,10 @@ Open a pull request on GitHub.
 
 ## Acknowledgements
 
-React — for the powerful UI framework
-Tailwind CSS — for flexible, fast styling
-Vite — for blazing fast builds
-Three.js — for advanced 3D visualizations
+- **React** — for the powerful UI framework \n
+- **Tailwind CSS** — for flexible, fast styling
+- **Vite** — for blazing fast builds
+- **Three.js** — for advanced 3D visualizations
 
 
 ## License
