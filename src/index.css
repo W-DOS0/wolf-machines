@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors - Industrial theme */
+    --background: 210 11% 96%;
+    --foreground: 213 27% 9%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 213 27% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 27% 9%;
+
+    /* Primary - Industrial Blue */
+    --primary: 213 94% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 94% 28%;
+
+    /* Secondary - Steel Gray */
+    --secondary: 213 12% 92%;
+    --secondary-foreground: 213 27% 9%;
+
+    /* Muted - Subtle backgrounds */
+    --muted: 213 12% 95%;
+    --muted-foreground: 213 19% 46%;
+
+    /* Accent - warnung/Alert Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warnung: 43 96% 56%;
+    --warnung-foreground: 213 27% 9%;
+    
+    --destructive: 348 83% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interface elements */
+    --border: 213 27% 84%;
+    --input: 213 27% 84%;
+    --ring: 213 94% 32%;
+
+    /* Component styling */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+:root {
+  --accent-foreground: 0 0% 0%; 
+}
+
+  .dark {
+    /* Dark mode - Industrial theme */
+    --background: 213 31% 7%;
+    --foreground: 213 12% 95%;
+
+    --card: 213 31% 9%;
+    --card-foreground: 213 12% 95%;
+
+    --popover: 213 31% 9%;
+    --popover-foreground: 213 12% 95%;
+
+    --primary: 213 94% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 94% 38%;
+
+    --secondary: 213 19% 18%;
+    --secondary-foreground: 213 12% 95%;
+
+    --muted: 213 19% 15%;
+    --muted-foreground: 213 19% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warnung: 43 96% 56%;
+    --warnung-foreground: 213 27% 9%;
+    
+    --destructive: 348 83% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 19% 18%;
+    --input: 213 19% 18%;
+    --ring: 213 94% 42%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Status indicator animations */
+  .pulse-success {
+    @apply animate-pulse bg-success;
+  }
+  
+  .pulse-warnung {
+    @apply animate-pulse bg-warnung;
+  }
+  
+  .pulse-destructive {
+    @apply animate-pulse bg-destructive;
+  }
+
+  /* Focus indicators for a11y */
+  .focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Industrial gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  }
+  
+  .gradient-status {
+    background: linear-gradient(90deg, hsl(var(--success)) 0%, hsl(var(--warnung)) 50%, hsl(var(--destructive)) 100%);
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+.react-flow__edge-path {
+  stroke-dasharray: 8;
+  animation: dashmove 1.5s linear infinite;
+  stroke-width: 1 !important;
+  stroke: #000102 !important;
+}
+
+@keyframes dashmove {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+.reactflow-wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
